@@ -1,0 +1,19 @@
+/*1. the direction of the main axis to 'row'
+
+2. the alignment along the main axis to the 'center'
+
+3. the alignment along the cross-axis to the 'center'
+
+4. and enable the wrapping of items.*/
+.item{
+    width: 100px;
+    height: 100px;
+}
+.container{
+    display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: 10px;
+}
