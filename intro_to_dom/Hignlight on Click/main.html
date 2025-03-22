@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+        rerum repudiandae enim consectetur consequatur quae recusandae,
+        perferendis at quod illum, deleniti similique a eius nulla architecto
+        earum. Iure, deleniti.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+        rerum repudiandae enim consectetur consequatur quae recusandae,
+        perferendis at quod illum, deleniti similique a eius nulla architecto
+        earum. Iure, deleniti.
+      </p>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi dolores,
+        rerum repudiandae enim consectetur consequatur quae recusandae,
+        perferendis at quod illum, deleniti similique a eius nulla architecto
+        earum. Iure, deleniti.
+      </p>
+</body>
+<script>
+    const allPTags = document.querySelectorAll("p");
+    for( let i = 0; i < allPTags.length; i++ ){
+        const el = allPTags[i];
+        el.addEventListener('click', function(ev){
+            if( ev.detail === 1 ){
+                el.style.backgroundColor = 'red';
+            }
+            if( ev.detail === 2 ){
+                el.style.backgroundColor = 'green';
+            }
+            if( ev.detail === 3 ){
+                el.style.backgroundColor = 'transparent';
+            }
+        })
+    }
+
+
+
+    // practice ans
+    /*for(let i = 0; i < para.length; i++){
+        para[i].addEventListener('click', function(){
+            para[i].style.backgroundColor = "red";
+        })
+    }
+    for(let i = 0; i < para.length; i++){
+        para[i].addEventListener('dblclick', function(){
+            para[i].style.backgroundColor = "green";
+        })
+    }
+    let paraclick = document.getElementById("p")
+    clickCount++;
+    if (clickCount === 3) {
+        para.style.backgroundColor = "none"; // Highlight on third click
+        clickCount = 0; // Reset the counter after highlighting
+    }*/
+
+</script>
+</html>
