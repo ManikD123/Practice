@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            margin: 0;
+        }
+        div{
+            height: 100vh;
+            width: 100vw;
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <div>    </div>
+</body>
+<script>
+    let divElem = document.querySelector("div");
+    let result = divElem.getBoundingClientRect();
+    console.log(result);
+
+    let width = result.width;
+
+    console.log(width);
+
+    if( width > 1024 ){
+        divElem.style.backgroundColor ="red"
+    } else if(width > 600 && width <= 1024){
+        divElem.style.backgroundColor = "blue";
+    } else {
+        div.style.backgroundColor = "green";
+    }
+
+</script>
+</html>
