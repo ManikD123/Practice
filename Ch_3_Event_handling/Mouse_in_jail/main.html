@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cell"></div>
+    
+</body>
+<script>
+    let divElem = document.querySelector(".cell");
+    divElem.addEventListener('mouseover', function(){
+        divElem.style.background="url('https://d2beiqkhq929f0.cloudfront.net/public_assets/assets/000/055/850/original/jail.jpg?1699030242')";
+    });
+
+    divElem.addEventListener('mouseout', function(){
+        divElem.style.background='none';
+    })
+</script>
+</html>

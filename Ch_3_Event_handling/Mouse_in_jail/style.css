@@ -1,0 +1,11 @@
+*{
+    box-sizing: border-box;
+}
+.cell{
+    display: flex;
+    border: 1px solid;
+    height: 20rem;
+    width: 20rem;
+    margin: auto;
+    margin-top: 20rem;
+}
