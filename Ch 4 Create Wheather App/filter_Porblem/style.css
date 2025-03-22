@@ -1,0 +1,40 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding-top: 5rem;
+
+}
+select, h1{
+    position: fixed;
+}
+h1{
+    top: 0px;
+}
+select{
+    width: 8rem;
+}
+.movies{
+    height: 10rem;
+    width: 10rem;
+    margin: 2rem;
+}
+.heading{
+    background-color: black;
+    height: 2rem;
+}
+.heading, .price{
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.price{
+    background-color: red;
+    height: 8rem;
+    padding: 1.5rem;
+    font-size: 2rem;
+}
