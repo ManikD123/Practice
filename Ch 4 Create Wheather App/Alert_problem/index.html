@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            border: 1px solid;
+        }
+        .red{
+            padding: 5rem;
+            height: 8rem;
+            width: 8rem;
+            background-color: red;
+        }
+        .yellow{
+            height: 8rem;
+            width: 8rem;
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    <div class="red">
+        <div class="yellow"></div>
+    </div>
+    
+</body>
+<script>
+    let red = document.querySelector(".red");
+
+    red.addEventListener('click', (e) => {
+        const colorBox = e.target.getAttribute('class');
+        if(colorBox === "yellow"){
+            window.alert('Yellow is clicked')
+        } else {
+            window.alert('Red is clicked')
+        }
+        
+    })
+   /* let yellow = document.querySelector(".yellow");
+    yellow.addEventListener('click', (e)=> {
+        window.alert('Yellow is clicked')
+    })*/
+</script>
+</html>
