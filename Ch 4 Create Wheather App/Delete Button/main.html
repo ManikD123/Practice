@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="all"> Remove All</button>
+    <ul>
+        <li>
+            <p>task - 1</p>
+            <button>delete</button>
+        </li>
+        <li>
+            <p>task - 3</p>
+            <button>delete</button>
+        </li>
+        <li>
+            <p>task - 4</p>
+            <button>delete</button>
+        </li>
+        <li>
+            <p>task - 5</p>
+            <button>delete</button>
+        </li>
+    </ul>
+</body>
+<script>
+    const removeAllBtn = document.querySelector("#all");
+    let fullList = document.querySelector("ul");
+
+    removeAllBtn.addEventListener('click', () => {
+        console.log("here");
+        fullList.style.display = "none"
+    })
+
+    const list = document.querySelectorAll("button")
+    for( let i = 0; i < list.length; i++){
+        list[i].addEventListener('click', () => {
+            list[i].parentElement.style.display = "none"
+        })
+    }
+</script>
+</html>
