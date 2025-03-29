@@ -20,4 +20,3 @@ inp.addEventListener('keyup', (event) => {
         }
     }
 });
-
