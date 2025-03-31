@@ -61,3 +61,35 @@ body{
 .remove-btn:hover {
 background-color: #4bb543;
 }
+
+/* Ticket Related CSS */
+
+.main-cont{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    flex-wrap: wrap;
+
+    /* As many tickets can be added here so this will make sure
+that the design is neat to accomodate multiple tickets */
+}
+.ticket-cont{
+    height: 12rem;
+    width: 15rem;
+    background-color: coral;
+}
+.ticket-color{
+    height: 1rem;
+}
+.ticket-id{
+    background-color: yellow;
+    height: 2rem;
+}
+.ticket-lock{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 90px;
+    margin-right: 5px;
+    font-size: 1.5rem;
+}
