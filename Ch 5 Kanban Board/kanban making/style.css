@@ -93,3 +93,42 @@ that the design is neat to accomodate multiple tickets */
     margin-right: 5px;
     font-size: 1.5rem;
 }
+
+.modal-cont{
+    height: 50vh;
+    width: 45vw;
+    display: flex;
+    background-color: lightsalmon;
+    position: fixed;
+    top: 30%;
+    left: 27%;
+}
+
+.textArea-cont{
+    height: 100%;
+    width: 75%;
+    resize: none;
+    outline: none;
+    background-color:#dfe4ea ;
+    font-size: 2rem;
+    color: black;
+}
+
+.priority-colors-container{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: #4b4b4b;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.priority-color{
+    height: 2rem;
+    width: 3rem;
+}
+
+.active{
+    border: 5px solid lightsalmon;
+}
