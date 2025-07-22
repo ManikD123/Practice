@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .progress-bar{
+            height: 2rem;
+            border: 0.1rem solid black;
+            border-radius: 0.4rem;
+            margin: 3rem;
+            padding: 0.13rem;
+        }
+        .bar{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: green;
+            border-radius: 0.4rem;
+            height: 1.5rem;
+            padding: 0.2rem;
+        }
+
+        
+    </style>
+</head>
+<body>
+    <div class="progress-bar">
+        <div class="bar" style="width: 5%">5%</div>
+    </div>
+</body>
+<script>
+    const token = setInterval(() => {
+        const bar = document.querySelector(".bar");
+        const currentPercentage = parseInt(bar.style.width);
+
+        if( currentPercentage < 100 ){
+            const newPercentage = `${currentPercentage + 10}%`;
+            const newPercentageNumber = currentPercentage + 10;
+            bar.style.width = newPercentageNumber > 100 ? "99%" : newPercentage;
+            bar.innerText = `Loading ${newPercentageNumber > 100 ? 100 : newPercentage}`
+
+        } else {
+            clearInterval(token);
+        }
+    }, 1500);
+</script>
+</html>

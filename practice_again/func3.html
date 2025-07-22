@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let myRadiusArray = [2, 3, 4, 5, 8];
+
+    function circleArea(radius){
+        return Math.PI * radius * radius;
+    }
+
+    function circleCircumferance(radius){
+        return 2 * Math.PI * radius;
+    }
+
+     function circleDiameter(radius){
+        return 2 * radius;
+    }
+
+    function calculate(radiusArr, logic){
+        let result = [];
+        for( let i = 0; i < radiusArr.length; i++ ){
+            result.push(logic(radiusArr[i]))
+        }
+        return result
+    }
+
+    let finalAreas = calculate(myRadiusArray, circleArea)
+console.log('This is area array => ', finalAreas)
+let finalCircumferences = calculate(myRadiusArray,
+circleCircumferance)
+console.log('This is Circumference array =>',
+finalCircumferences)
+let finalDiameter = calculate(myRadiusArray,
+circleDiameter)
+console.log('This is Diameter array =>', finalDiameter)
+
+
+</script>
+</html>
