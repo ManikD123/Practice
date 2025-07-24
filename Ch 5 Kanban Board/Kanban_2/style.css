@@ -1,0 +1,177 @@
+*{
+    box-sizing: border-box;
+    /*Applies the box-sizing property with a value 
+    of border-box to all elements. This makes elements' dimensions include padding and border, but not the margin.*/
+    /*background-color: aqua;*/
+}
+body{
+    margin: 0;
+    padding: 0;
+    /*Resets the default margin and padding of the body 
+    element to 0, providing a clean slate for further styling.*/
+}
+
+.toolbox-cont{
+    /*The .toolbox-cont class styles the toolbox container, 
+    setting its height, background color, and centering its child 
+    elements using Flexbox. The > * selector increases the 
+    left margin of all direct children, spacing out the 
+    priority color and action button containers.*/
+
+    height: 5rem;
+    background-color: #4b4b4b;
+    display: flex;
+    align-items: center;
+}
+.toolbox-cont > * {
+    margin-left: 4rem;
+}
+
+/*Styles the priority color container, setting dimensions, 
+background color, and evenly spacing the color indicators. 
+The :hover pseudo-class changes the 
+background color of any color indicator on hover, enhancing user interaction.*/
+.toolbox-priority-cont{
+    height: 3.5rem;
+    width: 18rem;
+    background-color: #3d3d3d;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.toolbox-priority-cont > *:hover {
+    background-color: #485460;
+}
+
+/* Color Indicators 
+The .color class sets the size for all color
+ indicators. Individual color classes apply 
+specific background colors, visually representing different priority levels.*/
+
+.color {
+    height: 1.5rem;
+    width: 3rem;
+}
+.lightpink {
+    background-color: lightpink;
+}
+
+.lightgreen {
+    background-color: lightgreen;
+}
+
+.lightblue {
+    background-color: lightblue;
+}
+
+.black {
+    background-color: black;
+}
+
+/* Action Buttons Container */
+
+.action-btn-cont {
+    height: 3.5rem;
+    width: 8rem;
+    background-color: #3d3d3d;
+    display: flex;
+}
+.action-btn-cont > * {
+    display: flex;
+    width: 50%;
+    font-size: 2rem;
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+/*Adds a hover effect to both the add and remove buttons by changing their 
+background color, providing visual feedback that the buttons are interactive.*/
+
+.add-btn:hover, .remove-btn:hover {
+    background-color: #4bb543;
+}
+
+/* Ticket styles */
+
+.main-cont{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    flex-wrap: wrap;
+    /* As many tickets can be added here so this will 
+    make sure that the design is neat to accomodate multiple tickets */
+}
+
+.ticket-cont {
+    height: 12rem;
+    width: 15rem;
+    background-color: coral;
+}
+
+.ticket-color{
+    height: 1rem;
+}
+
+.ticket-id{
+    background-color: yellow;
+    height: 2rem;
+}
+
+.ticket-lock{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 90px;
+    margin-right: 5px;
+    font-size: 1.5rem;
+
+    /*Positions the lock icon at the bottom-right corner of the ticket, 
+    with a margin at the top to push it down and a smaller margin on the right. 
+    The display: flex and justify-content: flex-end properties align the icon to the
+     right. The font size increases the icon's size for better visibility.*/
+}
+
+
+/* Modal Container */ 
+
+.modal-cont{
+    height: 50vh;
+    width: 45vw;
+    display: flex;
+    background-color: lightsalmon;
+    position: absolute;
+    top: 30%;
+    left: 27%;
+}
+
+
+.textArea-cont {
+  height: 100%;
+  width: 75%;
+  resize: none;
+  outline: none;
+  border: none;
+  background-color: #dfe4ea;
+  font-size: 2rem;
+  color: black;
+}
+
+.priority-colors-container{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background-color: #4b4b4b;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.priority-color {
+  height: 3rem;
+  width: 5rem;
+}
+
+.active {
+  border: 5px solid lightsalmon;
+}
