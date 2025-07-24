@@ -3,9 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Nested Commentator</title>
+    <style>
+        .card{
+            background-color: rgb(222 , 222, 222);
+            border-radius: 0.4rem;
+            margin-top: 2rem;
+            padding: 0.6rem;
+            height: auto;
+            box-shadow: 0 4px 8 px 0 rgba(0, 0, 0, 0.2);
+            
+        }
+        .text{
+            font-size: 1.2rem;
+            font-weight: bolder;
+        }
+        .reply{
+            color: rgb(23, 58, 84);
+        }   
+    </style>
 </head>
 <body>
-    
+    <div class="comment-container">     
+        <div class="comment">
+            <div class="card">
+                <div class="text">First Commentator</div>
+                <div class="reply">Add Reply</div> 
+            </div>
+        </div>
+        
+    </div>
 </body>
+<script>
+
+    function createInputBox(){  
+        const elem = document.querySelector("div");
+        elem.setAttribute("class", "comment-reply-container");
+        elem.innerHTML = `<input type="text" placeholder="Write your Reply" class="input" />
+        <button>Sumbit</button>`;
+        return elem;    
+    }
+
+    const commentcontainer = document.querySelector(".comment-container");
+    commentcontainer.addEventListener('click', (event) => {
+      //  console.log(event);
+
+        if( event.target.getAttribute("class") === "reply" ) {
+            const replyButton = createInputBox();
+            event.target.appendChild(replyBox);
+            
+        }
+    })
+</script>
 </html>
