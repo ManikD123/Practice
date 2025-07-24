@@ -11,7 +11,7 @@
             margin-top: 2rem;
             padding: 0.6rem;
             height: auto;
-            box-shadow: 0 4px 8 px 0 rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
             
         }
         .text{
@@ -21,6 +21,33 @@
         .reply{
             color: rgb(23, 58, 84);
         }   
+        .comment-reply-container{
+            margin-left: 4rem;
+            margin-top: 0.4rem;
+        }
+
+        .input{
+            border-radius: 0.6rem;
+            height: 1.8rem;
+        }
+
+        .btn{
+            background-color: rgb(101, 101, 202);
+            color: whitesmoke;
+            border-radius: 0.6rem;
+            padding: 0.3rem;
+            border: 0;
+            margin-left: 0.125rem;
+            height: 1.5rem;
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+            cursor: pointer;
+        }
+
+        .comment:not(:first-child){
+            margin-left: 4rem;
+            margin-top: 0.4rem;
+        }
+
     </style>
 </head>
 <body>
@@ -36,22 +63,46 @@
 </body>
 <script>
 
+
     function createInputBox(){  
-        const elem = document.querySelector("div");
+        const elem = document.createElement("div");
         elem.setAttribute("class", "comment-reply-container");
-        elem.innerHTML = `<input type="text" placeholder="Write your Reply" class="input" />
-        <button>Sumbit</button>`;
+        elem.innerHTML = `<input type="text" placeholder="Write your Reply" class="input" name="reply" />
+        <button class = "btn">Sumbit</button>`;
         return elem;    
+    }
+
+    
+    function createAddReply(comment){
+        const elem = document.createElement("div");
+        elem.setAttribute("class","comment");
+        elem.innerHTML = `<div class="card">
+                <div class="text">${comment}</div>
+                <div class="reply">Add Reply</div> 
+            </div>`
+
+        return elem;
     }
 
     const commentcontainer = document.querySelector(".comment-container");
     commentcontainer.addEventListener('click', (event) => {
+        const elem = event.target.closest(".comment");
       //  console.log(event);
 
         if( event.target.getAttribute("class") === "reply" ) {
-            const replyButton = createInputBox();
-            event.target.appendChild(replyBox);
-            
+           // const elem = event.target.parentElement.parentElement;
+            const replyBox = createInputBox();
+            elem.appendChild(replyBox);
+
+        }
+
+        if( event.target.getAttribute("class") === "btn" ) {
+            const inputVal = event.target.previousElementSibling.value;
+            const addReplyElem = createAddReply(inputVal);
+           // const elem = event.target.parentElement.parentElement;
+            elem.appendChild(addReplyElem);
+            event.target.parentElement.remove(); // remove button
+
         }
     })
 </script>
