@@ -1,0 +1,142 @@
+*{
+    box-sizing: border-box;
+    }
+body{
+    margin: 0;
+    border: 0;
+}
+
+/* Toolbox style */
+.toolbox-container {
+    display: flex;
+    align-items: center;
+    height: 5rem;
+    background-color: #4b4b4b;
+}
+.toolbox-container>*{
+    margin-left: 4rem;
+}
+.tool-box-priority-container{
+    height: 3rem;
+    width: 18rem;
+    display: flex;
+    background-color: lightgray;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.color:hover {
+    transition: 0.2s ease-in;
+    background: #485460;
+}
+
+.color{
+    height: 1.5rem;
+    width: 3rem;
+}
+.lightpink{
+    background-color: lightpink;
+}
+.lightgreen{
+    background-color: lightgreen;
+}
+.lightblue{
+    background-color: lightblue;
+}
+.black{
+    background-color: black;
+}
+
+.action-btn-cont{
+    height: 3rem;
+    width: 8rem;
+    display: flex;
+    background-color: rgb(58, 56, 56);
+}
+.action-btn-cont>*{
+    display: flex;
+    width: 50%;
+    font-size: 2rem;
+    color: white;
+    align-items: center;
+    justify-content: center;
+}
+
+.add-btn:hover, .delete-btn:hover {
+    transition: 0.2s ease-in;
+    background: #485460;
+}
+
+/* Ticket containser CSS */
+
+.main-cont{
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+.ticket-cont{
+    height: 12rem;
+    width: 15rem;
+    background-color: coral;
+    border: 1px solid black;
+}
+.ticket-color{
+    height: 1rem;
+    width: 15rem;
+    background-color: lightpink;
+}
+.ticket-id{
+    height: 2rem;
+    width: 15rem;
+    background-color: yellow;
+}
+
+
+.ticket-lock{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 90px;
+    margin-right: 5px;
+    font-size: 1.5rem;
+}
+
+.modal-cont{
+    height: 50vh;
+    width: 45vw;
+    display: flex;
+    background-color: salmon;
+    position: absolute;
+    top: 30%;
+    left: 27%;
+}
+
+.text-area-cont{
+    height: 100%;
+    width: 75%;
+    resize: none;
+    outline: none;
+    border: none;
+    background-color: #dfe4ea;
+    font-size: 2rem;
+    color: black;
+}
+
+.priority-color-container{
+    height: 100%;
+    width: 25%;
+    display: flex;
+    padding: 0.5rem;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.priority-color{
+    height: 6rem;
+    width: 5rem;
+}
+.active{
+    border: 5px solid lightgrey;
+}
