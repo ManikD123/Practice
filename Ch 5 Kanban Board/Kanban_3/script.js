@@ -58,7 +58,8 @@ function createTicket(ticketColor,ticketId, ticketTask){
 
     mainCont.appendChild(ticketcont);
     handleRemoval(ticketcont);
-    handleLock(ticketcont)
+    handleLock(ticketcont);
+    handleColor(ticketcont);
 }
 
 function handleRemoval(ticketElem){
@@ -135,4 +136,24 @@ function handleLock(ticket){
         }
 
     });
+}
+
+function handleColor(ticket){
+    let ticketColorBand = ticket.querySelector(".ticket-color");
+    ticketColorBand.addEventListener('click', function(){
+        let currentColor = ticketColorBand.style.backgroundColor;
+
+        let currentColorIdx = colors.findIndex(function(color){
+            return currentColor === color;
+        });
+
+        currentColorIdx++; 
+
+        let newTicketColorIdx = currentColorIdx % colors.length;
+        let newTickerColor = colors[newTicketColorIdx];
+
+        ticketColorBand.style.backgroundColor = newTickerColor;
+        
+    })
+
 }
