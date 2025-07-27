@@ -157,3 +157,53 @@ function handleColor(ticket){
     })
 
 }
+
+/*let toolboxcolors = document.querySelectorAll(".color");
+
+for( let i = 0; i < toolboxcolors.length; i++ ){
+    toolboxcolors[i].addEventListener('click', function (){
+        let selectedToolBoxColor = toolboxcolors[i].classList[0];
+
+        let allTickets = document.querySelectorAll(".ticket-cont");
+        for( let j = 0; j < allTickets.length; j++ ){
+            allTickets[j].remove();
+
+            let filteredTickets = ticketsArr.filter(function(ticket){
+                return selectedToolBoxColor === ticket.ticketColor;
+            });
+
+        }
+    });
+}*/
+
+const toolBoxColors = document.querySelectorAll('.color');
+
+toolBoxColors.forEach(function(colorElem){
+    colorElem.addEventListener('click', function(){
+        const selectedColor = colorElem.classList[0];
+        console.log({selectedColor});
+        const allTickets = document.querySelectorAll('.ticket-cont');
+        console.log(allTickets);
+        allTickets.forEach(function(ticketElem){
+            const ticketColorBand = ticketElem.querySelector(".ticket-color");
+            if( ticketColorBand.style.backgroundColor === selectedColor ){
+                // its a match with color
+                ticketElem.style.display = 'block'
+            } else {
+                ticketElem.style.display = 'none'
+            }
+        })
+    })
+
+// reset all filters
+    colorElem.addEventListener('dblclick', function(){
+        const allTickets = document.querySelectorAll('.ticket-cont');
+        allTickets.forEach(function(ticketElem){
+            ticketElem.style.display = 'block';
+        })
+    })
+    
+})
+
+
+
