@@ -4,6 +4,8 @@ let mainCont = document.querySelector('.main-cont');
 let textArea = document.querySelector('.text-area-cont');
 let allTickets = document.querySelector('.ticket-cont');
 
+
+
 // show Modal Flag
 let addtaskFlag = false;
 
@@ -106,7 +108,7 @@ allpriorityColors.forEach(function(colorElem){
         modalPriorityColor = colorElem.classList[0];  // update modal priority color
        // console.log(modalPriorityColor);
     })
-})
+});
 
 // Handling Lock
 
@@ -117,14 +119,20 @@ function handleLock(ticket){
     let ticketockElem = ticket.querySelector(".ticket-lock");
     let ticketLockIcon = ticketockElem.children[0];
 
+    let ticketTaskArea = ticket.querySelector('.task-area');
+
     ticketLockIcon.addEventListener('click', function(){
+
         console.log("Lock selected"); // log message for lock click
         if( ticketLockIcon.classList.contains(lockClose)){
             ticketLockIcon.classList.remove(lockClose);
             ticketLockIcon.classList.add(lockOpen);
+            ticketTaskArea.setAttribute('contenteditable', 'true'); // change' content editable fireld to true
         } else {
             ticketLockIcon.classList.remove(lockOpen);
             ticketLockIcon.classList.add(lockClose);
+            ticketTaskArea.setAttribute('contenteditable', 'false');// change' content editable fireld to false
         }
+
     });
 }
