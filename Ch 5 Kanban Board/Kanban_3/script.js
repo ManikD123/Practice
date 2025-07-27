@@ -49,15 +49,19 @@ function createTicket(ticketColor,ticketId, ticketTask){
     ticketcont.innerHTML = 
             `<div class="ticket-color" style="background-color: ${ticketColor};"></div>
             <div class="ticket-id">${ticketId}</div>
-            <div class="task-area">${ticketTask} </div>`
+            <div class="task-area">${ticketTask} </div>
+            <div class="ticket-lock">
+            <i class="fa-solid fa-lock"></i>
+            </div>`
 
     mainCont.appendChild(ticketcont);
     handleRemoval(ticketcont);
+    handleLock(ticketcont)
 }
 
 function handleRemoval(ticketElem){
     ticketElem.addEventListener('click', function(){
-        if(removeTaskFlag ){
+        if(!removeTaskFlag ){
             return;
         } else{
             ticketElem.remove();
@@ -104,3 +108,23 @@ allpriorityColors.forEach(function(colorElem){
     })
 })
 
+// Handling Lock
+
+let lockClose = "fa-lock";
+let lockOpen = "fa-lock-open"
+
+function handleLock(ticket){
+    let ticketockElem = ticket.querySelector(".ticket-lock");
+    let ticketLockIcon = ticketockElem.children[0];
+
+    ticketLockIcon.addEventListener('click', function(){
+        console.log("Lock selected"); // log message for lock click
+        if( ticketLockIcon.classList.contains(lockClose)){
+            ticketLockIcon.classList.remove(lockClose);
+            ticketLockIcon.classList.add(lockOpen);
+        } else {
+            ticketLockIcon.classList.remove(lockOpen);
+            ticketLockIcon.classList.add(lockClose);
+        }
+    });
+}
