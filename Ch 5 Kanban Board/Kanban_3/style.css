@@ -101,11 +101,11 @@ body{
     margin-right: 5px;
     font-size: 1.5rem;
 }
-
+/* Enter task modal */
 .modal-cont{
     height: 50vh;
     width: 45vw;
-    display: flex;
+    display: none;
     background-color: salmon;
     position: absolute;
     top: 30%;
