@@ -111,9 +111,9 @@ modalcont.addEventListener('keydown', function(event){
     if( key === 'Shift' ){
         let taskContent = textArea.value;
         let tickerID = shortid();
-        createTicket(modalPriorityColor,tickerID, taskContent);
-
-        ticketsArr.push({tickerID,taskContent, ticketColor : modalPriorityColor });
+        createTicket(modalPriorityColor, tickerID, taskContent);
+        // USING LS IN CREATE FLOW..
+        ticketsArr.push({ticketId: tickerID, ticketTask: taskContent, ticketColor: modalPriorityColor  });
 
         updateLocalStorage();
 
@@ -170,7 +170,13 @@ function handleLock(ticket){
 
 function handleColor(ticket){
     let ticketColorBand = ticket.querySelector(".ticket-color");
+
+   const idelem = ticket.querySelector(".ticket-id");
+
+
     ticketColorBand.addEventListener('click', function(){
+
+        const ticketIdx = getTicketArrIndex(idelem.innerText);
         let currentColor = ticketColorBand.style.backgroundColor;
 
         let currentColorIdx = colors.findIndex(function(color){
@@ -180,9 +186,12 @@ function handleColor(ticket){
         currentColorIdx++; 
 
         let newTicketColorIdx = currentColorIdx % colors.length;
-        let newTickerColor = colors[newTicketColorIdx];
+        let newTicketColor = colors[newTicketColorIdx];
 
-        ticketColorBand.style.backgroundColor = newTickerColor;
+        ticketColorBand.style.backgroundColor = newTicketColor;
+
+      ticketsArr[ticketIdx].ticketColor = newTicketColor;
+    updateLocalStorage()
         
     })
 
