@@ -94,11 +94,17 @@ function createTicket(ticketColor,ticketId, ticketTask){
 }
 
 function handleRemoval(ticketElem){
+    const idElem = ticketElem.querySelector('.ticket-id');
+    const id = idElem.innerText;
     ticketElem.addEventListener('click', function(){
         if(!removeTaskFlag ){
             return;
         } else{
             ticketElem.remove();
+            // update LS
+            const tktIdx = getTicketArrIndex(id);
+            ticketsArr.splice(tktIdx, 1);
+            updateLocalStorage();
         }
     })
 }
