@@ -157,8 +157,11 @@ function handleLock(ticket){
     let ticketLockIcon = ticketockElem.children[0];
 
     let ticketTaskArea = ticket.querySelector('.task-area');
+    const idElem = ticket.querySelector('.ticket-id');
+    const id = idElem.innerText;
 
     ticketLockIcon.addEventListener('click', function(){
+        const ticketIdx = getTicketArrIndex(id);
 
         console.log("Lock selected"); // log message for lock click
         if( ticketLockIcon.classList.contains(lockClose)){
@@ -170,6 +173,9 @@ function handleLock(ticket){
             ticketLockIcon.classList.add(lockClose);
             ticketTaskArea.setAttribute('contenteditable', 'false');// change' content editable fireld to false
         }
+
+        ticketsArr[ticketIdx].taskContent = ticketTaskArea.innerText;
+        updateLocalStorage()
 
     });
 }
