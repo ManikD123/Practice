@@ -25,7 +25,6 @@ removeBtn.addEventListener('click', function(){
     }
 });
 
-
 //Function to make Enter task modal appear or dissapear
 
 addbtn.addEventListener('click', function(){
@@ -71,8 +70,6 @@ function handleRemoval(ticketElem){
         }
     })
 }
-
-
 
 // create ticket after pressing the shift key
 

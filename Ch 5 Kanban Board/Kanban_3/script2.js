@@ -4,11 +4,37 @@ let mainCont = document.querySelector('.main-cont');
 let textArea = document.querySelector('.text-area-cont');
 let allTickets = document.querySelector('.ticket-cont');
 
-// Updating the Local stroage
+// LS Implementation
+// givem OR considition in case the value is null, so will show {} --> empty Array
+const ticketsArr = JSON.parse(localStorage.getItem('tickets') || '[]');
+console.log(ticketsArr);
+// for every reload.. fetch from LD when started
+function init(){
+    // whenever locd, I will see data from the LS
+    // is something is present I till call createTicket() and that funtion
+
+    if(localStorage.getItem("tickets")) {
+        ticketsArr.forEach(function(ticket){
+        createTicket(ticket.ticketColor, ticket.ticketId, ticket.ticketTask);
+        })
+    }
+
+}
+
+init();
 
 function updateLocalStorage(){
+    // to set the LS from your local array
     localStorage.setItem("tickets", JSON.stringify(ticketsArr));
-    
+}
+
+// create a function to create unique ticket
+function getTicketArrIndex(id){
+    // give me index from array which gets attached
+    let foundIdx = ticketsArr.findIndex(function(tkt){
+        return id === tkt.ticketId;
+    })
+    return foundIdx;
 }
 
 // show Modal Flag
@@ -29,7 +55,6 @@ removeBtn.addEventListener('click', function(){
         removeBtn.style.color = 'white';
     }
 });
-
 
 //Function to make Enter task modal appear or dissapear
 
@@ -62,6 +87,7 @@ function createTicket(ticketColor,ticketId, ticketTask){
             </div>`
 
     mainCont.appendChild(ticketcont);
+
     handleRemoval(ticketcont);
     handleLock(ticketcont);
     handleColor(ticketcont);
@@ -77,8 +103,6 @@ function handleRemoval(ticketElem){
     })
 }
 
-
-
 // create ticket after pressing the shift key
 
 modalcont.addEventListener('keydown', function(event){
@@ -88,19 +112,20 @@ modalcont.addEventListener('keydown', function(event){
         let taskContent = textArea.value;
         let tickerID = shortid();
         createTicket(modalPriorityColor,tickerID, taskContent);
+
+        ticketsArr.push({tickerID,taskContent, ticketColor : modalPriorityColor });
+
+        updateLocalStorage();
+
         modalcont.style.display = 'none'; //hide the modal
         textArea.value = '';
     }
 })
 
-
-
 // taking the color priority from user then updating the color selected from user
 let colors = ["lightpink", "lightgreen","lightblue","black"];
 let modalPriorityColor = colors[colors.length-1]; // defalt black
-
 let allpriorityColors = document.querySelectorAll('.priority-color');
-
 allpriorityColors.forEach(function(colorElem){
     colorElem.addEventListener('click', function(){
         console.log(colorElem);
