@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input id="input_field" type="Text" placeholder="Please enter the text"></input>
+    <button id="Sumbit">Sumbit</button>
+</body>
+<script>
+    let inputfield = document.querySelector('#input_field');
+    let proc = function processInput(){
+        console.log("Processing input...")
+    }
+    inputfield.addEventListener("keydown", function(){
+        debounce(proc(), 3000);
+    });
+
+    function debounce(func, wait){
+        let timeout;
+        return function(){
+            clearTimeout(timeout);
+            timeout = setTimeout(() => {
+                func();
+            }, wait)
+        }
+    }
+</script>
+</html>
