@@ -107,7 +107,7 @@ startBtn.addEventListener("click", () => {
     mins,
     secs
   );
-  console.log(transformedhrs, transformedmins, transformedsecs);
+  console.log(transformedhrs, transformedmins, transformedsecs)
   const totalTimeInSeconds =
     transformedhrs * 60 * 60 + transformedmins * 60 + transformedsecs;
   timer(totalTimeInSeconds);
