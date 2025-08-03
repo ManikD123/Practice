@@ -1,4 +1,7 @@
 const startBtn = document.querySelector("#start");
+const pauseBtn = document.querySelector("#pause");
+const continueBtn = document.querySelector("#continue");
+const resetBtn = document.querySelector("#reset");
 const hrInput = document.getElementById("hr")
 const minInput = document.getElementById("min")
 const secInput = document.getElementById("sec")
@@ -54,6 +57,11 @@ const updateUI = (countDownTimer) => {
         hrInput.value = "00";
         minInput.value = "00";
         secInput.value = "00";
+        // once the timer reach zero, the pause will shiift to start and reset button
+        continueBtn.style.display = "none";
+        pauseBtn.style.display = "none";
+        startBtn.style.display = "block";
+        resetBtn.style.display = "block";
         return;
     }
     // if timer is not0 we will update as
@@ -84,8 +92,6 @@ const updateUI = (countDownTimer) => {
 };
 
 const timer = (countDownTime) => {
-
-    
   counterId = setInterval(() => {
     updateUI(countDownTime);
     countDownTime--;
@@ -111,4 +117,31 @@ startBtn.addEventListener("click", () => {
   const totalTimeInSeconds =
     transformedhrs * 60 * 60 + transformedmins * 60 + transformedsecs;
   timer(totalTimeInSeconds);
+
+  startBtn.style.display = "none";
+  pauseBtn.style.display = "block";
+});
+
+continueBtn.addEventListener("click", () => {
+  timer(saveTimeLeft);
+  continueBtn.style.display = "none";
+  pauseBtn.style.display = "block";
+});
+
+pauseBtn.addEventListener("click", () => {
+  clearInterval(counterId);
+  pauseBtn.style.display = "none";
+  continueBtn.style.display = "block";
+});
+
+resetBtn.addEventListener("click", () => {
+  saveTimeLeft = 0;
+  clearInterval(counterId);
+  minInput.value = "00";
+  hrInput.value = "00";
+  secInput.value = "00";
+  continueBtn.style.display = "none";
+  pauseBtn.style.display = "none";
+  startBtn.style.display = "block";
+  resetBtn.style.display = "block";
 });
