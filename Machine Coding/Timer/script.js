@@ -52,7 +52,7 @@ const validatedInput = (hrs, mins, secs) => {
 }
 
 const updateUI = (countDownTimer) => {
-    if(countDownTimer === 0){
+    if (countDownTimer === 0) {
         clearInterval(counterId);
         hrInput.value = "00";
         minInput.value = "00";
@@ -68,21 +68,21 @@ const updateUI = (countDownTimer) => {
     let hrs = Math.floor(countDownTimer / 3600);
     let mins = Math.floor((countDownTimer % 3600) / 60);
     let secs = countDownTimer % 60;
-    if(secs > 0){
+    if (secs > 0) {
         secs--;
         secInput.value = secs < 10 ? `0${secs}` : secs;
         minInput.value = mins < 10 || mins === 0 ? `${mins}` : mins;
         hrInput.value = hrs < 10 || hrs === 0 ? `${hrs}` : hrs;
         return;
     }
-    if(mins > 0){
+    if (mins > 0) {
         mins--;
         minInput.value = mins < 10 ? `0${mins}` : mins;
         secInput.value = 59;
         hrInput.value = hrs;
         return;
 
-    }if(hrs > 0){
+    } if (hrs > 0) {
         hrs--;
         minInput.value = 59;
         minInput.value = 59;
@@ -92,11 +92,11 @@ const updateUI = (countDownTimer) => {
 };
 
 const timer = (countDownTime) => {
-  counterId = setInterval(() => {
-    updateUI(countDownTime);
-    countDownTime--;
-    saveTimeLeft = countDownTime;
-  }, 1000);
+    counterId = setInterval(() => {
+        updateUI(countDownTime);
+        countDownTime--;
+        saveTimeLeft = countDownTime;
+    }, 1000);
 };
 
 // User might have entered it in frontend nad validate that the valueis correct
@@ -109,39 +109,39 @@ startBtn.addEventListener("click", () => {
         return;
     }
     const { transformedhrs, transformedmins, transformedsecs } = TransformedInput(
-    hrs,
-    mins,
-    secs
-  );
-  console.log(transformedhrs, transformedmins, transformedsecs)
-  const totalTimeInSeconds =
-    transformedhrs * 60 * 60 + transformedmins * 60 + transformedsecs;
-  timer(totalTimeInSeconds);
+        hrs,
+        mins,
+        secs
+    );
+    console.log(transformedhrs, transformedmins, transformedsecs)
+    const totalTimeInSeconds =
+        transformedhrs * 60 * 60 + transformedmins * 60 + transformedsecs;
+    timer(totalTimeInSeconds);
 
-  startBtn.style.display = "none";
-  pauseBtn.style.display = "block";
+    startBtn.style.display = "none";
+    pauseBtn.style.display = "block";
 });
 
 continueBtn.addEventListener("click", () => {
-  timer(saveTimeLeft);
-  continueBtn.style.display = "none";
-  pauseBtn.style.display = "block";
+    timer(saveTimeLeft);
+    continueBtn.style.display = "none";
+    pauseBtn.style.display = "block";
 });
 
 pauseBtn.addEventListener("click", () => {
-  clearInterval(counterId);
-  pauseBtn.style.display = "none";
-  continueBtn.style.display = "block";
+    clearInterval(counterId);
+    pauseBtn.style.display = "none";
+    continueBtn.style.display = "block";
 });
 
 resetBtn.addEventListener("click", () => {
-  saveTimeLeft = 0;
-  clearInterval(counterId);
-  minInput.value = "00";
-  hrInput.value = "00";
-  secInput.value = "00";
-  continueBtn.style.display = "none";
-  pauseBtn.style.display = "none";
-  startBtn.style.display = "block";
-  resetBtn.style.display = "block";
+    saveTimeLeft = 0;
+    clearInterval(counterId);
+    minInput.value = "00";
+    hrInput.value = "00";
+    secInput.value = "00";
+    continueBtn.style.display = "none";
+    pauseBtn.style.display = "none";
+    startBtn.style.display = "block";
+    resetBtn.style.display = "block";
 });
