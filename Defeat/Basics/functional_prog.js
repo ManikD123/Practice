@@ -48,3 +48,5 @@ let totalSum = arr.reduce(function(acc, num){
     return acc;
 })
 console.log(totalSum)
+
+setTimeout
