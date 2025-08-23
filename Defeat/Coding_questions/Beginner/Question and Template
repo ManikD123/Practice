@@ -1,0 +1,52 @@
+Beginner (1–5)
+
+Write a function sumArray that takes an array of numbers and returns the sum of all elements.
+
+Write a function findMax that returns the largest number in an array.
+
+Write a function reverseString that takes a string and returns the reversed string.
+
+Write a function isPalindrome that checks if a given string is a palindrome.
+
+Write a function filterGreaterThan(arr, n) that returns only numbers greater than n.
+
+Closures & Higher-Order Functions (6–10)
+
+Write a function createAdder(x) that returns a function which adds x to its argument.
+Example: add5 = createAdder(5); add5(10) → 15
+
+Write a function createPower(p) that returns a function which raises a number to the power p.
+
+Write a function counter() that returns an object with two methods: increment() and decrement(). The counter starts at 0.
+
+Write a function once(fn) that takes a function and returns a new function that can only be called once.
+
+Write a function createGreeting(greeting) that returns a function which greets a person’s name.
+Example: sayHello = createGreeting("Hello"); sayHello("John") → "Hello, John"
+
+Callbacks & Array Methods (11–15)
+
+Implement a function customMap(arr, callback) that works like the built-in map.
+
+Implement a function customReduce(arr, callback, initialValue) that works like the built-in reduce.
+
+Write a function applyToEach(arr, fn) that applies a given function fn to each element in arr.
+
+Write a function findIndexCustom(arr, callback) that mimics findIndex.
+
+Write a function forEachCustom(arr, callback) that mimics forEach.
+
+Execution Context & Advanced Closures (16–20)
+
+Write a function memoize(fn) that caches results of expensive function calls.
+
+Write a function debounce(fn, delay) that delays execution of fn until after delay ms of no calls.
+
+Write a function throttle(fn, delay) that ensures fn is called at most once every delay ms.
+
+Write a function makeIdGenerator() that returns a function generating unique IDs (1, 2, 3, …).
+
+Write a function privateBankAccount(initialBalance) that returns an object with methods: deposit, withdraw, and getBalance. The balance should be private.
+
+
+
