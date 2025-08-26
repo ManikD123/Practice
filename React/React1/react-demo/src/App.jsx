@@ -1,33 +1,31 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
+import Displaydata from './Components/Displaydata.jsx';
+import { MyCompnent } from './Components/MyComponants.jsx';
+import { MyCompnent1 } from './Components/MyComponants.jsx';
+import ConditionalRendering from './Components/conditionalRendering.jsx';
+import Button from './Components/Button.jsx';
 
 function App() {
-  const [count, setCount] = useState(0)
+  
+const fruits = ['Apple', 'Banana', 'Mango'];
+const person ={
+  name: "xxx",
+  age: 25
+}
 
+const isLoggedIn = false;
+const name = "xxxx";
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <h1>This is react</h1>
+     <MyCompnent message="Hello, I am a comp 1" />
+      <MyCompnent message="Hello, I am a comp 2" />
+      <MyCompnent message="Hello, I am a comp 3" />
+      <MyCompnent message="Hello, I am a comp 4" />
+      <MyCompnent1 message="Hello, I am a comp 5" />
+      <Displaydata fruits = {fruits} person = {person}/>
+      <ConditionalRendering isLoggedIn = {isLoggedIn} name = {name}/>
+      <Button />
     </>
   )
 }
