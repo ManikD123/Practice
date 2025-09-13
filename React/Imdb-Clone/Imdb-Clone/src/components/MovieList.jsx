@@ -8,6 +8,7 @@ const MovieList = ({ movies }) => {
     const [selectedMovie, setSelectedMovie] = useState(null);
 
 
+
     useEffect(() => {
         // page refresh
         setWatchList(() => {
@@ -46,6 +47,11 @@ const MovieList = ({ movies }) => {
         setSelectedMovie(movie)
     };
 
+     const handleCloseModal = () => {
+        setOpenModel(false);
+        setSelectedMovie(null)
+    };
+
     return (
         <>
             <div className="flex justify-evenly flex-wrap gap-8">
@@ -74,14 +80,20 @@ const MovieList = ({ movies }) => {
 
                                 )}
                                 <div className='text-white w-full text-center text-xl p-2 bg-gray-900/70 rounded-xl  hover:cursor-pointer'
-                                    onClick={() => handleOpenModal()} >
+                                    onClick={() => handleOpenModal(movie)} >
                                     {movie?.title}
                                 </div>
                             </div>
                         </div>
                     })}
             </div>;
-            {openModal && <MovieInfo movie={selectedMovie} />}
+            {openModal && (
+                <div className="fixed inset-0 z-50 backdrop-blur-sm bg-black/50 h-screen overflow-y-auto flex justify-center items-center">
+                <MovieInfo
+                    movie={selectedMovie} handleCloseModal={handleCloseModal}
+                />
+                </div>
+                )}
         </>
     );
 };

@@ -9,7 +9,8 @@ const Movie = () => {
     const [movies, setMovies] = useState();
     const [loader, setLoader] = useState(false);
     const [pageNo, setPageNo] = useState(1);
-
+    const TMDB_API_KEY = import.meta.env.VITE_API_KEY; 
+    const TMDB_TRENDING_MOVIESBASE_URL= import.meta.env.VITE_TRENDING_MOVIESBASE_URL;
 
 
     useEffect(() => {
@@ -17,7 +18,7 @@ const Movie = () => {
             setLoader(true);
 
             const url =
-                `https://api.themoviedb.org/3/trending/movie/day?api_key=6bff8263ed68de3e11417a70842f3190&language=en-US&page=${pageNo}`;
+                `${TMDB_TRENDING_MOVIESBASE_URL}?api_key=${TMDB_API_KEY}&language=en-US&page=${pageNo}`;
             axios.get(url).then((response) => {
                 const movieData = response?.data?.results;
                 setMovies(movieData);

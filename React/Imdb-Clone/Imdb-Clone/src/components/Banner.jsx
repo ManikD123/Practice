@@ -9,12 +9,15 @@ const Banner = () => {
     const [movies, setMovies] = useState();
     const [loader, setLoader] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
+
+    const TMDB_API_KEY = import.meta.env.VITE_API_KEY;
+    const TMDB_TRENDING_MOVIESBASE_URL= import.meta.env.VITE_TRENDING_MOVIESBASE_URL;
     useEffect(() => {
         try {
 
             setLoader(true);
             const url =
-                "https://api.themoviedb.org/3/trending/movie/day?api_key=6bff8263ed68de3e11417a70842f3190"
+                `${TMDB_TRENDING_MOVIESBASE_URL}?api_key=${TMDB_API_KEY}`
             axios.get(url).then((response) => {
                 /// getting data for 5 movies
                 let moviedata = response?.data?.results?.slice(0, 5);
