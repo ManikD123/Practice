@@ -16,14 +16,18 @@ const NavBar = () => {
             return {
               textDecoration: isActive ? "underline" : "none"
             }
-          }}>Home</NavLink>
+          }}
+          className={"text-3xl font-bold text-blue-500"}
+          >Home</NavLink>
         </li>
         <li>
           <NavLink to="/watchlist" style={({ isActive }) => {
             return {
               textDecoration: isActive ? "underline" : "none"
             }
-          }}>WatchList</NavLink>
+          }}
+          className={"text-3xl font-bold text-blue-500"}
+          >WatchList</NavLink>
         </li>
       </ul>
     </nav>
