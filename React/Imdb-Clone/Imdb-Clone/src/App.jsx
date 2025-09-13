@@ -2,7 +2,7 @@
 import './App.css'
 import Home from './Pages/Home';
 import NavBar from './components/NavBar';
-import PageNotFound from './components/PageNotFound';
+import PageNotFound from './Pages/PageNotFound';
 import WatchList from './Pages/WatchList';
 import {Routes, Route} from "react-router-dom";
 

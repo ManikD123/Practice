@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import axios from "axios";
 import { useEffect } from 'react';
 import { ChevronLeft, ChevronRight } from "lucide-react"
-import Spinner from './Spinner';
+import Spinner from '../../components/Spinner';
 
 const Banner = () => {
 

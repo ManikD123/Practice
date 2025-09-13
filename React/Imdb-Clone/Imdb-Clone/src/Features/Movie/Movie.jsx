@@ -1,7 +1,7 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react'
-import Spinner from './Spinner';
-import Pagination from './Pagination';
+import Spinner from '../../components/Spinner';
+import Pagination from '../../components/Spinner';
 import MovieList from './MovieList';
 
 const Movie = () => {

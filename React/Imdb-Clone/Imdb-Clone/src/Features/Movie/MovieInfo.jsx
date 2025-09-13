@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import Spinner from './Spinner';
+import Spinner from '../../components/Spinner';
 import axios from 'axios';
 
 const MovieInfo = ({ movie, handleCloseModal }) => {
