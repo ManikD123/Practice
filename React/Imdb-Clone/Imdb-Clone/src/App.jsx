@@ -18,7 +18,7 @@ function App() {
       <Routes>
         <Route path="/" element= {<Home />}/>
         <Route path="/home"  element= {<Home />}/>
-        <Route path="/watchlist"  element= {<WatchList />}/>
+        <Route path="/WatchList"  element= {<WatchList />}/>
         <Route path="*" element={<PageNotFound />} />
       </Routes>
 

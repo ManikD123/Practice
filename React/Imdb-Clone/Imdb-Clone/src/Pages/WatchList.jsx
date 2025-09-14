@@ -1,9 +1,10 @@
 import React from 'react'
+import WatchListTable from '../Features/WatchList/WatchListTable'
 
 const WatchList = () => {
   return (
     <div>
-        WatchList
+      <WatchListTable />
     </div>
   )
 }
