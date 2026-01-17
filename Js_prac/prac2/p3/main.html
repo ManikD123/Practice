@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> sonali</h1>
+    <button id="btn">say hello</button>
+    <ul>
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>8</li>
+        <li>9</li>
+        <li>10</li>
+    </ul>
+    <p> 2 + 2 = 5</p>
+    <script>
+        let btn1 = document.querySelector('#btn')
+        console.log(btn1)
+
+
+        btn1.addEventListener('click', function(e){
+            console.log("button clicked")
+
+            let divelem = document.createElement('div')
+            divelem.innerText = 'Hello'
+            let body = document.querySelector('body')
+            body.appendChild(divelem)
+        })
+
+
+        let ourList  = document.querySelector('ul');
+        console.log(ourList );
+
+        let allItems = document.querySelectorAll('li')
+        console.log(allItems)
+
+        let IndexThatHas8 = allItems[6];
+        let sevenElem = document.createElement('li')
+        sevenElem.innerText = '7'
+
+        ourList.insertBefore(sevenElem, IndexThatHas8)
+        
+        let para = document.querySelector('p');
+        para.innerText = '2 + 2 = 4'
+        
+</script>
+</body>
+<!-- <script src="index.js"> </script> -->
+
+</html>

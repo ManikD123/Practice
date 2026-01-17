@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="hello-div">
+        <p>hello im p</p>
+    </div>
+    <button id="btn1">Click me to append Hello</button>
+    <!-- <button>doesnt do anything</button> -->
+    <script>
+        const buttonElement = document.getElementById("btn1");
+        buttonElement.addEventListener('click', function () {
+            // i want to appemd "hello" on screen.
+            console.log('button clicked');
+            const newElement = document.createElement("span");
+            newElement.innerText = "Hello";
+            console.log(newElement);
+
+            const parentElem = document.querySelector('.hello-div');
+
+            // adding at the end of parent node
+            parentElem.appendChild(newElement)
+
+            //adding as first node under parent
+            // parentElem.prepend(newElement)
+        })
+    </script>
+</body>
+
+</html>
